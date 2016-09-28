@@ -45,16 +45,27 @@ read url
 git push--all $url
 git remote add origin $url
 git push -u origin master
-opera $url
+firefox $url
 
 elif [ "$reponse" = "2" ]; then
 	echo "------------------------------------------"
 	echo "-----Quel fichier allons nous push ?------"
 	echo "------------------------------------------"
 	echo "------------------------------------------"
-
 read path
 cd ./$path/
-
+git add .
+	echo "-----------------------------------------"
+	echo "----------Un commentaire ?---------------"
+	echo "-----------------------------------------"
+	echo "-----------------------------------------"
+read comment
+git commit -m "$comment"
+git push
+	
+	echo "-----------------------------------------"
+	echo "----------Mission Completed--------------"
+	echo "-----------------------------------------"
+	echo "-----------------------------------------"
 
 fi
